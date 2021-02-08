@@ -49,8 +49,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
 \usepackage[protrusion=true,expansion=true]{microtype}
-%\usepackage{amsmath,amsfonts,amsthm}     % Math packages
-%\usepackage{graphicx}                    % Enable pdflatex
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
 \usepackage{url}
 
 \frenchspacing              % Better looking spacings after periods
@@ -112,15 +112,16 @@
 %%% Added by Edwin
 %%% ------------------------------------------------------------
 \renewcommand{\thesubsection}{\number\numexpr\value{subsection}.\relax} %Do not show section number
+\usepackage{wrapfig}
 
 %%% Begin Document
 %%% ------------------------------------------------------------
 \begin{document}
 % you can upload a photo and include it here...
-%\begin{wrapfigure}{l}{0.5\textwidth}
-%	\vspace*{-2em}
-%		\includegraphics[width=0.15\textwidth]{photo}
-%\end{wrapfigure}
+\begin{wrapfigure}{r}{0.2\textwidth}
+	\vspace*{-5em}
+	\includegraphics[width=0.15\textwidth]{img/ejw.jpg}
+\end{wrapfigure}
 
 % SET STRETCH
 \baselinestretch
