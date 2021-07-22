@@ -30,7 +30,8 @@
 
 %\setlength\parindent{0pt}
 %\usepackage{parskip}
-\usepackage{hyperref}
+% Wrap long urls with hyphens
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref} 
 % Underscores in doi break, the next command fixes that
 \newcommand{\doi}[1]{\textsc{doi}: \href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
 \usepackage{comment}
@@ -109,7 +110,7 @@
 		\normalsize \par}
 
 
-%%% Added by Edwin
+%%% Extra customization
 %%% ------------------------------------------------------------
 \renewcommand{\thesubsection}{\number\numexpr\value{subsection}.\relax} %Do not show section number
 \usepackage{wrapfig}
@@ -179,7 +180,7 @@ Judicium: Cum laude }
 %%% ------------------------------------------------------------
 \NewPart{Honours}{}
 
-\EducationEntry{Honours Programme Philosophy, Theology\\ and Religious Studies}{2012-2014}{Radboud University}{On Schopenhauer's pessimistic metaphysics\\ Supervisor: Prof. dr. Ger Groot.
+\EducationEntry{Honours Programme Philosophy, Theology\\ and Religious Studies}{2012-2014}{Radboud University}{On Schopenhauer's pessimistic metaphysics\\ Supervisor: Prof. dr. Ger Groot
 }
 
 \sepspace
@@ -190,6 +191,9 @@ Judicium: Cum laude }
 
 %%% ------------------------------------------------------------
 \subsection*{1. Teaching and Tutoring}
+
+\WorkEntry{Teaching Assistant Ethics for AI}{Mar.2021-Jul.2021}{Radboud University Nijmegen}{Chair working groups in the AI master\\ and contribute exam questions}
+\sepspace
 
 \WorkEntry{Teaching Assistant Societal Impact of AI}{Sep.2019-Feb.2020}{Radboud University Nijmegen}{Responsibilities: Teach working groups\\ and grade assignments and exams }
 \sepspace
@@ -210,7 +214,7 @@ Judicium: Cum laude }
 %%% ------------------------------------------------------------
 \subsection*{2. Internships}
 
-\WorkEntry{Intern Innovation Platform}{Mar.2021-Present}{Nederlandse Spoorwegen}{Helping develop and concretize NS's approach to ethical AI }
+\WorkEntry{Intern Innovation Platform}{Mar.2021-Present}{Nederlandse Spoorwegen}{I helped realize an ethical approach to AI at NS by 1) working on AI policy and making it applicable to developers (ethics by design) and 2) researching tools and techniques for implementing values such as explainability and fairness.}
 
 %%% ------------------------------------------------------------
 \subsection*{3. Academic appointments}
@@ -229,6 +233,10 @@ Judicium: Cum laude }
 
 %%% ------------------------------------------------------------
 \NewPart{Papers and talks}
+
+\WorkEntry{``E-Salon: social media, zegen of vloek voor het vrije debat?''}{2021}{Invited speaker by Stichting Vrij Links.\\
+Event page: \url{https://www.vrij-links.nl/e-salon/social-media-zegen-of-vloek-voor-het-vrije-debat/}}
+\sepspace
 
 \WorkEntry{``Tech Giants will battle over your health data''}{2020}{Published in \textit{Turning Magazine}, Vol 2: AI \& Health, pp. 12-13.}
 \sepspace
@@ -250,9 +258,14 @@ in \textit{Die Welt als Wille und Vorstellung}}{2012}{Graduation component of my
 %%% ------------------------------------------------------------
 \NewPart{Projects}{}
 
+\WorkEntry{The AI Ethics Tool Landscape}{2021-Present}{Editor, developer}{An open-source project that builds a taxonomy of practical tools for\\
+implementing ethical AI.\\
+Hosted at \url{https://edwinwenink.github.io/ai-ethics-tool-landscape/}}
+\sepspace
+
 \WorkEntry{Archive Fever: Website on Philosophy, Technology and AI}{2018-Present}{Editor, developer and writer}{Published 50+ online articles ranging from\\
 	technical tutorials to philosophical essays.\\
-	Currently 35.766 page views and 742 monthly unique visitors\\
+	Currently 44.239 page views and 742 monthly unique visitors\\
 	Hosted at \url{https://www.edwinwenink.xyz}
 }
 \sepspace
@@ -279,7 +292,10 @@ For information on Clean, see \url{https://clean.cs.ru.nl/Clean}}
 \SkillsEntry{}{German (working knowledge)}
 \sepspace
 
-\SkillsEntry{Programming Languages}{\textsc{Python}, \textsc{Java}, \textsc{Scala}, \textsc{R}, \textsc{Bash}}
+\SkillsEntry{Programming Languages}{\textsc{Python}, \textsc{Java}, \textsc{R}, \textsc{Bash}}
+\sepspace
+
+\SkillsEntry{Frameworks}{\textsc{PyTorch}, \textsc{TensorFlow}, \textsc{scikit-learn}, \textsc{numpy}, \textsc{pandas}, \textsc{NLTK}}
 \sepspace
 
 \SkillsEntry{Software}{\textsc{Unix}, \textsc{Vim}, \LaTeX}
@@ -293,5 +309,8 @@ For information on Clean, see \url{https://clean.cs.ru.nl/Clean}}
 %\\
 %\sepspace
 %2. Swimming
+
+\vspace*{\fill}
+\small Last updated on \today.
 
 \end{document}
