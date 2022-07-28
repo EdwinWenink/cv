@@ -1,5 +1,3 @@
-% TODO instead of requiring \sepspace after entries, perhaps I should include this spacing by default in the command
-
 \author{Edwin Wenink}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cv}[2022/07/28 Edwin Wenink's CV class]
@@ -58,7 +56,7 @@
 %%% Macros
 %%% ------------------------------------------------------------
 \newlength{\spacebox}
-\settowidth{\spacebox}{8888888888}			% Box to align text
+\settowidth{\spacebox}{88888888888}			% Box to align text
 \newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
 
 \newcommand{\MyName}[1]{ % Name
@@ -76,12 +74,14 @@
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}		       % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value
+            
 
 \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
-		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\noindent\hangindent=0em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value	
+		\textbf{#1}}			   % Skill name
+		\hspace{1.5em} #2 \par     % Entry value	
+        \sepspace}
 		
 \newcommand{\EducationEntry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
@@ -91,7 +91,8 @@
 			%\hfill\color{White}#2}} \par  % Duration
 		\noindent \textit{#3} \par        % School
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
+		\normalsize \par
+        \sepspace}
 
 \newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
 		\noindent \textbf{#1} \hfill      % Jobname
@@ -99,7 +100,8 @@
 		%\colorbox{Black}{\color{White}#2} \par  % Duration
 		\noindent \textit{#3} \par              % Company
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
+		\normalsize \par
+        \sepspace}
 
 
 
