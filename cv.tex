@@ -1,127 +1,13 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% LaTeX Template: Curriculum Vitae
-%
-% Source: http://www.howtotex.com/
-% Feel free to distribute this template, but please keep the
-% referal to HowToTeX.com.
-% Date: July 2011
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% How to use writeLaTeX: 
-%
-% You edit the source code here on the left, and the preview on the
-% right shows you the result within a few seconds.
-%
-% Bookmark this page and share the URL with your co-authors. They can
-% edit at the same time!
-%
-% You can upload figures, bibliographies, custom classes and
-% styles using the files menu.
-%
-% If you're new to LaTeX, the wikibook is a great place to start:
-% http://en.wikibooks.org/wiki/LaTeX
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Load my custom CV class
+\documentclass{cv}
 
-% TODO instead of requiring \sepspace after entries, perhaps I should include this spacing by default in the command
-
-\documentclass{article}
-
-\usepackage[margin=3.5cm]{geometry}
-%\textheight=700px                    % Saving trees ;-)
-
-%\setlength\parindent{0pt}
-%\usepackage{parskip}
-% Wrap long urls with hyphens
-\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref} 
-% Underscores in doi break, the next command fixes that
-\newcommand{\doi}[1]{\textsc{doi}: \href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
-\usepackage{comment}
-\usepackage{ifplatform}
-% Adding natbib adds \citet and \citep command
-\usepackage[style=authoryear, natbib]{biblatex}
-\usepackage{graphicx}
-\usepackage{float}
-% Pretty tables
-\usepackage[table,xcdraw, svgnames]{xcolor}      % Colors by their 'svgnames'
-\usepackage{tabularx}
-\newcolumntype{b}{X}
-\newcolumntype{s}{>{\hsize=.5\hsize}X}
-
-\usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{csquotes}
-\usepackage[protrusion=true,expansion=true]{microtype}
-\usepackage{amsmath,amsfonts,amsthm}     % Math packages
-\usepackage{graphicx}                    % Enable pdflatex
-\usepackage{url}
-
-\frenchspacing              % Better looking spacings after periods
-\pagestyle{empty}           % No pagenumbers/headers/footers
-
-%%% Custom sectioning (sectsty package)
-%%% ------------------------------------------------------------
-\usepackage{sectsty}
-
-\sectionfont{%			            % Change font of \section command
-	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
-	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
-
-%%% Macros
-%%% ------------------------------------------------------------
-\newlength{\spacebox}
-\settowidth{\spacebox}{8888888888}			% Box to align text
-\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
-
-\newcommand{\MyName}[1]{ % Name
-		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
-		\par \normalsize \normalfont}
-		
-\newcommand{\MySlogan}[1]{ % Slogan (optional)
-		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
-		\par \normalsize \normalfont}
-
-\newcommand{\NewPart}[1]{\section*{{\LARGE \color{Red}\#} \uppercase{#1}}}
-
-\newcommand{\PersonalEntry}[2]{
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}		       % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value
-
-\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value	
-		
-\newcommand{\EducationEntry}[4]{
-		\noindent \textbf{#1} \hfill      % Study
-        \fbox{#2} \par
-		%\colorbox{Black}{%
-			%\parbox{6em}{%
-			%\hfill\color{White}#2}} \par  % Duration
-		\noindent \textit{#3} \par        % School
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
-
-\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
-		\noindent \textbf{#1} \hfill      % Jobname
-        \fbox{#2} \par
-		%\colorbox{Black}{\color{White}#2} \par  % Duration
-		\noindent \textit{#3} \par              % Company
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
-
-
-%%% Extra customization
-%%% ------------------------------------------------------------
-\renewcommand{\thesubsection}{\number\numexpr\value{subsection}.\relax} %Do not show section number
-\usepackage{wrapfig}
+% Initialize variables
+\setthemecolor{Red}
 
 %%% Begin Document
 %%% ------------------------------------------------------------
 \begin{document}
+
 % you can upload a photo and include it here...
 \begin{wrapfigure}{r}{0.2\textwidth}
 	\vspace*{-5em}
@@ -146,6 +32,7 @@
 \PersonalEntry{Github}{\url{https://github.com/EdwinWenink}}
 \PersonalEntry{LinkedIn}{\url{https://www.linkedin.com/in/ejwenink/}}
 \PersonalEntry{Website}{\url{https://www.edwinwenink.xyz}}
+\PersonalEntry{Telephone}{06-12744606}
 
 
 %%% Education
