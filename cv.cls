@@ -19,7 +19,14 @@
 \RequirePackage{comment}
 \RequirePackage{ifplatform}
 % Adding natbib adds \citet and \citep command
-\RequirePackage[style=authoryear, natbib]{biblatex}
+% Bibliography
+%\usepackage[style=alphabetic,sorting=nyt,sortcites=true,maxbibnames=9,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\RequirePackage[backend=biber,
+    isbn=false,
+    style=numeric,
+    sortcites=true,
+    sorting=ydnt,  % sort by year descending; all papers have my name in it by default
+    maxbibnames=99 ]{biblatex} % Print all author names
 \RequirePackage{graphicx}
 \RequirePackage{float}
 % Pretty tables
@@ -38,6 +45,26 @@
 
 \frenchspacing              % Better looking spacings after periods
 \pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom biblatex styling: make author name bold
+% https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex
+\RequirePackage{xpatch}
+\newbibmacro*{name:bold}[2]{%
+  \edef\blx@tmp@name{\expandonce#1, \expandonce#2}%
+  \def\do##1{\ifdefstring{\blx@tmp@name}{##1}{\bfseries\listbreak}{}}%
+  \dolistloop{\boldnames}}
+\newcommand*{\boldnames}{}
+
+\xpretobibmacro{name:family}{\begingroup\usebibmacro{name:bold}{#1}{#2}}{}{}
+\xpretobibmacro{name:given-family}{\begingroup\usebibmacro{name:bold}{#1}{#2}}{}{}
+\xpretobibmacro{name:family-given}{\begingroup\usebibmacro{name:bold}{#1}{#2}}{}{}
+\xpretobibmacro{name:delim}{\begingroup\normalfont}{}{}
+
+\xapptobibmacro{name:family}{\endgroup}{}{}
+\xapptobibmacro{name:given-family}{\endgroup}{}{}
+\xapptobibmacro{name:family-given}{\endgroup}{}{}
+\xapptobibmacro{name:delim}{\endgroup}{}{}
+
 
 %%% Custom sectioning (sectsty package)
 %%% ------------------------------------------------------------
@@ -110,7 +137,6 @@
 \renewcommand{\thesubsection}{\number\numexpr\value{subsection}.\relax} %Do not show section number
 \RequirePackage{wrapfig}
 
-% TODO Themed signs
 \newcommand{\pipe}{{\color{\@themecolor} \quad\textbar\quad}}
 \newcommand{\halfpipe}{{\color{\@themecolor} \hspace{0.2em}\textbar\hspace{0.2em}}}
 \newcommand{\coloredbullet}{{\color{\@themecolor} \textbullet}}
