@@ -2,7 +2,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cv}[2022/07/28 Edwin Wenink's CV class]
 
-% Use article as base class
+% Use article as the base class
 \LoadClass{article}
 
 %%% Required packages
@@ -46,7 +46,7 @@
 \frenchspacing              % Better looking spacings after periods
 \pagestyle{empty}           % No pagenumbers/headers/footers
 
-%%% Custom biblatex styling: make author name bold
+%%% Custom biblatex styling: make author name bold in the bibliography
 % https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex
 \RequirePackage{xpatch}
 \newbibmacro*{name:bold}[2]{%
@@ -64,6 +64,10 @@
 \xapptobibmacro{name:given-family}{\endgroup}{}{}
 \xapptobibmacro{name:family-given}{\endgroup}{}{}
 \xapptobibmacro{name:delim}{\endgroup}{}{}
+
+% API to provide a list of author name varieties that should be made bold
+% Needed because the macros apply to the *formatted* names
+\newcommand*{\setboldnames}[1]{\forcsvlist{\listadd\boldnames}{#1}}
 
 
 %%% Custom sectioning (sectsty package)
