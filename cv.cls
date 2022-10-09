@@ -77,15 +77,20 @@
 %%% Custom sectioning (titlesec package)
 %%% ------------------------------------------------------------
 
-% Horizontal rule on the same line
-\newcommand\ruleafter[1]{#1~\xrfill[.5ex]{0.5pt}}
 
 % Do not show main section number, only subsection number
 \renewcommand{\thesubsection}{\number\numexpr\value{subsection}.\relax}
 
 % Custom formatting of section titles using titlesec; bch-b-n: CharterBT-Bold font
+% Underline main section headers
 \titleformat{\section}{\usefont{OT1}{phv}{b}{n} \large\bfseries}{\thesection}{1em}{}[{\titlerule[3pt]}]
-\titleformat{\subsection}{\bfseries\large}{\thesubsection}{1em}{\ruleafter}
+
+% Fill out subsection headers with a vertically centered horizontal line
+\newcommand\ruleafter[1]{#1~\xrfill[.5ex]{0.5pt}}
+\newcommand\rulebefore[1]{\xrfill[.5ex]{0.5pt}~#1}
+% Either before or after the section title
+\titleformat{\subsection}{\bfseries\large}{\thesubsection}{1em}{\rulebefore}
+%\titleformat{\subsection}{\bfseries\large}{\thesubsection}{1em}{\ruleafter}
 
 
 %%% Setting up variables
@@ -95,7 +100,6 @@
 
 % Whether to compile the long or short version
 \newif\iflong
-
 
 %%% Macros
 %%% ------------------------------------------------------------
