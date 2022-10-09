@@ -117,18 +117,25 @@
 		\hspace{1.5em} #2 \par     % Entry value	
         \sepspace}
 		
-\newcommand{\EducationEntry}[4]{
+\newcommand{\EducationEntry}[5]{
 		\noindent \textbf{#1} \hfill      % Study
         \fbox{#2} \par
 		%\colorbox{Black}{%
 			%\parbox{6em}{%
 			%\hfill\color{White}#2}} \par  % Duration
-		\noindent \textit{#3} \par        % School
-        \iflong
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+        %\ifthenelse{\equal{#4}{}}{Empty.}{Nonempty.}
+        % \ifthenelse{\equal{#4}{}}{}{\coloredbullet {\small#4}} 
+        \noindent \textit{#3} 
+        \if\relax\detokenize{#4}\relax
+            % No GPA provided
+        \else
+            \coloredbullet {\small#4}
         \fi
-		\normalsize \par
-        \sepspace
+         \par        % School
+        \iflong
+        \noindent\hangindent=2em\hangafter=0 {\footnotesize #5} % Description
+        \fi
+		\par\sepspace
         }
 
 \newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
@@ -137,11 +144,9 @@
 		%\colorbox{Black}{\color{White}#2} \par  % Duration
 		\noindent \textit{#3} \par              % Company
         \iflong
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+        \noindent\hangindent=2em\hangafter=0 {\footnotesize #4} % Description
         \fi
-		\normalsize \par
-        \sepspace}
-
+		\par\sepspace}
 
 
 %%% Extra customization and styling

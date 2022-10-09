@@ -1,5 +1,6 @@
 % TODO design "brief" function to compile a more compact version of this CV
 % TODO define manual Vim folds; but I think the latex plugin overrides the fold expression
+% TODO define the dates on right hand side as a proper column so descriptions don't run into that column
 
 % Load my custom CV class
 \documentclass{cv}
@@ -50,37 +51,34 @@
 %%% ------------------------------------------------------------
 \NewPart{Education}{}
 
-\EducationEntry{Master Artificial Intelligence}{2019-2022}{Radboud University}{Specialisation: Intelligent Technology\\
+\EducationEntry{Master Artificial Intelligence}{2019-2022}{Radboud University}{GPA: 8.7\footnote{On a scale from 1 to 10.}, \emph{Cum laude}}
+{Specialisation: Intelligent Technology\\
 Thesis title: \emph{On the explainability of case law recommendations using paragraph embeddings}\\
-Supervisors: Prof. dr. Tom van Engers and dr. Johan Kwisthout\\
-GPA: 8.7\footnote{On a scale from 1 to 10.}, \emph{Cum laude}}
+Supervisors: Prof. dr. Tom van Engers and dr. Johan Kwisthout}
 
-
-\EducationEntry{Research Master Philosophy}{2014-2020}{Radboud University}{Specialisation: Metaphysics and Epistemology\\
+\EducationEntry{Research Master Philosophy}{2014-2020}{Radboud University}
+{GPA: 8.3, \emph{Bene meritum}}
+{Specialisation: Metaphysics and Epistemology\\
 Thesis title: \emph{Destiny and adestination: Derrida and Heidegger on the sending of being}\\
-Supervisor: Prof. dr. Gert-Jan van der Heiden\\
-GPA: 8.3, \emph{Bene meritum}}
+Supervisor: Prof. dr. Gert-Jan van der Heiden}
 
-
-\EducationEntry{Bachelor Artificial Intelligence}{2016-2019}{Radboud University}{Thesis title: \textit{Query by Navigation over Legal Documents:\\
+\EducationEntry{Bachelor Artificial Intelligence}{2016-2019}{Radboud University}
+{GPA: 8.7, \emph{Cum laude}}
+{Thesis title: \textit{Query by Navigation over Legal Documents:\\
 An Automated Pipeline using Formal Concept Analysis} \\
-Supervisor: dr. Franc Grootjen, in cooperation with Wolters Kluwer \\
-GPA: 8.7, \emph{Cum laude}}
+Supervisor: dr. Franc Grootjen, in cooperation with Wolters Kluwer}
 
-
-\EducationEntry{Honours Programme Philosophy, Theology\\ and Religious Studies}{2012-2014}{Radboud University}{On Schopenhauer's pessimistic metaphysics\\ Supervisor: Prof. dr. Ger Groot}
+\EducationEntry{Honours Programme Philosophy, Theology\\ and Religious Studies}{2012-2014}{Radboud University}{N/A}{On Schopenhauer's pessimistic metaphysics\\ Supervisor: Prof. dr. Ger Groot}
 
 % NOTE do not split up entry over two pages
 % TODO way to do this automatically?
 %\newpage
 
-\EducationEntry{Bachelor Philosophy}{2011-2014}{Radboud University}{Thesis title: \textit{Van Stem naar Arche-Schrift: Deconstructie in} De la Grammatologie\\
-Supervisor: Prof. dr. Philippe van Haute\\
-GPA: 8.8, \emph{Cum laude}}
+\EducationEntry{Bachelor Philosophy}{2011-2014}{Radboud University}{GPA: 8.8, \emph{Cum laude}}{Thesis title: \textit{Van Stem naar Arche-Schrift: Deconstructie in} De la Grammatologie\\
+Supervisor: Prof. dr. Philippe van Haute}
 
+\EducationEntry{Gymnasium}{2005-2011}{Thomas a Kempis college, Arnhem}{GPA: 8.5}{Graduated in two curricula: Nature and Technology, Nature and Health.}
 
-\EducationEntry{Gymnasium}{2005-2011}{Thomas a Kempis college, Arnhem}{Graduated in two curricula: Nature and Technology, Nature and Health.\\ GPA: 8.5
-}
 
 %%% Honours, prizes, scholarships, grants
 %%% ------------------------------------------------------------
@@ -109,16 +107,16 @@ GPA: 8.8, \emph{Cum laude}}
 %%% ------------------------------------------------------------
 \subsection{Teaching and Tutoring}
 
-\WorkEntry{Teaching Assistant Ethics for AI}{Mar.2021-Jul.2021}{Radboud University Nijmegen}{Chair working groups in the AI master\\ and contribute exam questions}
+\WorkEntry{Teaching Assistant Ethics for AI}{Mar.2021-Jul.2021}{Radboud University Nijmegen}{Chair working groups in the AI master and contribute exam questions}
 
 
-\WorkEntry{Teaching Assistant Societal Impact of AI}{Sep.2019-Feb.2020}{Radboud University Nijmegen}{Responsibilities: Teach working groups\\ and grade assignments and exams }
+\WorkEntry{Teaching Assistant Societal Impact of AI}{Sep.2019-Feb.2020}{Radboud University Nijmegen}{Responsibilities: Teach working groups and grade assignments and exams }
 
 
 \WorkEntry{Teaching Assistant Introduction Artificial Intelligence}{Sep.2019-Nov.2019}{Radboud University Nijmegen}{Responsibilities: Teach working groups }
 
 
-\WorkEntry{Teaching Assistant Theoretical Cognitive Science}{Feb.2019-Sep.2019}{Radboud University Nijmegen}{Responsibilities: Teach working groups\\ and grade assignments and exams }
+\WorkEntry{Teaching Assistant Theoretical Cognitive Science}{Feb.2019-Sep.2019}{Radboud University Nijmegen}{Responsibilities: Teach working groups and grade assignments and exams }
 
 
 \WorkEntry{Freelance Tutor for Student Recruitment Philosophy}{2014-2017}{Radboud University Nijmegen}{Chair working groups on university taster days}
@@ -149,7 +147,7 @@ GPA: 8.8, \emph{Cum laude}}
 %%% ------------------------------------------------------------
 \NewPart{Skills}{}
 
-\SkillsEntry{Programming Languages}{\textbf{\emph{Experienced:}} Python \halfpipe \textbf{\emph{Familiar:}} Java \halfpipe R \halfpipe Bash \halfpipe SQL \halfpipe \LaTeX}
+\SkillsEntry{Programming Languages}{\textbf{\emph{Experienced:}} Python \halfpipe \textbf{\emph{Familiar:}} R \halfpipe Java \halfpipe Bash \halfpipe SQL \halfpipe \LaTeX}
 
 % Hugo? HTML5? CSS? TODO avoid overflowing into left column!
 \SkillsEntry{Frameworks \& Libraries}{Scikit-learn \halfpipe NumPy \halfpipe Pandas \halfpipe NLTK \halfpipe Gensim \halfpipe PyTorch \halfpipe TensorFlow}
