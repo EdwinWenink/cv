@@ -42,6 +42,10 @@
 \RequirePackage{amsmath,amsfonts,amsthm}     % Math packages
 \RequirePackage{graphicx}                    % Enable pdflatex
 \RequirePackage{url}
+%\RequirePackage{ifthen}
+\RequirePackage{wrapfig}
+\RequirePackage{titlesec}
+\RequirePackage{xhfill}
 
 \frenchspacing              % Better looking spacings after periods
 \pagestyle{empty}           % No pagenumbers/headers/footers
@@ -70,18 +74,26 @@
 \newcommand*{\setboldnames}[1]{\forcsvlist{\listadd\boldnames}{#1}}
 
 
-%%% Custom sectioning (sectsty package)
+%%% Custom sectioning (titlesec package)
 %%% ------------------------------------------------------------
-\RequirePackage{sectsty}
 
-\sectionfont{%			            % Change font of \section command
-	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
-	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+% Horizontal rule on the same line
+\newcommand\ruleafter[1]{#1~\xrfill[.5ex]{0.5pt}}
+
+% Do not show main section number, only subsection number
+\renewcommand{\thesubsection}{\number\numexpr\value{subsection}.\relax}
+
+% Custom formatting of section titles using titlesec; bch-b-n: CharterBT-Bold font
+\titleformat{\section}{\usefont{OT1}{phv}{b}{n} \large\bfseries}{\thesection}{1em}{}[{\titlerule[3pt]}]
+\titleformat{\subsection}{\bfseries\large}{\thesubsection}{1em}{\ruleafter}
 
 
 %%% Setting up variables
 %%% ------------------------------------------------------------
+% Theme color
 \newcommand*{\setthemecolor}[1]{\def\@themecolor{#1}}
+
+% Whether to compile the long or short version
 \newif\iflong
 
 
@@ -151,9 +163,7 @@
 
 %%% Extra customization and styling
 %%% ------------------------------------------------------------
-\renewcommand{\thesubsection}{\number\numexpr\value{subsection}.\relax} %Do not show section number
-\RequirePackage{wrapfig}
 
 \newcommand{\pipe}{{\color{\@themecolor} \quad\textbar\quad}}
 \newcommand{\halfpipe}{{\color{\@themecolor} \hspace{0.2em}\textbar\hspace{0.2em}}}
-\newcommand{\coloredbullet}{{\color{\@themecolor} \textbullet}}
+\newcommand{\coloredbullet}{{\color{\@themecolor} \textbullet} }
