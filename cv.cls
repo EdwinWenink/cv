@@ -82,6 +82,7 @@
 %%% Setting up variables
 %%% ------------------------------------------------------------
 \newcommand*{\setthemecolor}[1]{\def\@themecolor{#1}}
+\newif\iflong
 
 
 %%% Macros
@@ -123,16 +124,21 @@
 			%\parbox{6em}{%
 			%\hfill\color{White}#2}} \par  % Duration
 		\noindent \textit{#3} \par        % School
+        \iflong
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+        \fi
 		\normalsize \par
-        \sepspace}
+        \sepspace
+        }
 
 \newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
 		\noindent \textbf{#1} \hfill      % Jobname
         \fbox{#2} \par
 		%\colorbox{Black}{\color{White}#2} \par  % Duration
 		\noindent \textit{#3} \par              % Company
+        \iflong
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+        \fi
 		\normalsize \par
         \sepspace}
 
