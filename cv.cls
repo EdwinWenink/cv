@@ -98,7 +98,9 @@
 		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
 		\par \normalsize \normalfont}
 
-\newcommand{\NewPart}[1]{\section*{{\LARGE \color{\@themecolor}\#} \uppercase{#1}}}
+% NOTE: I also let \NewPart reset the subsection counter so
+% subsection* commands with manual numbering are not necessary
+\newcommand{\NewPart}[1]{\section*{{\LARGE \color{\@themecolor}\#} \uppercase{#1}}\setcounter{subsection}{0}}
 
 \newcommand{\PersonalEntry}[2]{
 		\noindent\hangindent=2em\hangafter=0 % Indentation
