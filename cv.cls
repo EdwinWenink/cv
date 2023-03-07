@@ -10,10 +10,11 @@
 \RequirePackage[margin=3.5cm]{geometry}
 %\textheight=700px                    % Saving trees ;-)
 
+\RequirePackage[utf8]{inputenc}
 %\setlength\parindent{0pt}
 %\RequirePackage{parskip}
 % Wrap long urls with hyphens
-\PassOptionsToPackage{hyphens}{url}\RequirePackage{hyperref} 
+\PassOptionsToPackage{hyphens}{url}\RequirePackage{hyperref}
 % Underscores in doi break, the next command fixes that
 \newcommand{\doi}[1]{\textsc{doi}: \href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
 \RequirePackage{comment}
@@ -36,7 +37,6 @@
 %\newcolumntype{s}{>{\hsize=.5\hsize}X}
 
 \RequirePackage[english]{babel}
-\RequirePackage[utf8]{inputenc}
 \RequirePackage{csquotes}
 \RequirePackage[protrusion=true,expansion=true]{microtype}
 \RequirePackage{amsmath,amsfonts,amsthm}     % Math packages
@@ -110,7 +110,7 @@
 \newcommand{\MyName}[1]{ % Name
 		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
 		\par \normalsize \normalfont}
-		
+
 \newcommand{\MySlogan}[1]{ % Slogan (optional)
 		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
 		\par \normalsize \normalfont}
@@ -124,15 +124,15 @@
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}		       % Entry name (birth, address, etc.)
 		\hspace{1.5em} #2 \par}    % Entry value
-            
+
 
 \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
 		\noindent\hangindent=0em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\textbf{#1}}			   % Skill name
-		\hspace{1.5em} #2 \par     % Entry value	
+		\hspace{1.5em} #2 \par     % Entry value
         \sepspace}
-		
+
 \newcommand{\EducationEntry}[5]{
 		\noindent \textbf{#1} \hfill      % Study
         \fbox{#2} \par
@@ -140,8 +140,8 @@
 			%\parbox{6em}{%
 			%\hfill\color{White}#2}} \par  % Duration
         %\ifthenelse{\equal{#4}{}}{Empty.}{Nonempty.}
-        % \ifthenelse{\equal{#4}{}}{}{\coloredbullet {\small#4}} 
-        \noindent \textit{#3} 
+        % \ifthenelse{\equal{#4}{}}{}{\coloredbullet {\small#4}}
+        \noindent \textit{#3}
         \if\relax\detokenize{#4}\relax
             % No GPA provided
         \else
